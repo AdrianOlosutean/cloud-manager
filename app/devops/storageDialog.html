@@ -1,0 +1,25 @@
+<md-dialog flex="90">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Storage</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <md-input-container>
+            <label>Name</label>
+            <input ng-model="vm.name">
+        </md-input-container>
+        <md-button ng-click="insert()"></md-button>
+
+        <md-dialog-content>
+            <md-list>
+                <md-list-item class="md-2-line" ng-repeat="block in blocks">
+                    <p>{{block.name}}</p>
+                </md-list-item>
+            </md-list>
+        </md-dialog-content>
+
+    </form>
+</md-dialog>

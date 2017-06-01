@@ -1,0 +1,25 @@
+<div ng-controller="devopsController">
+    <md-content layout-padding>
+        <h2>Virtual Machines</h2>
+        <md-input-container>
+            <label>Name</label>
+            <input ng-model="name">
+        </md-input-container>
+        <md-button ng-click="insert()">Insert</md-button>
+
+        <md-list>
+            <md-list-item class="md-2-line" ng-repeat="vm in vms">
+                <div class="md-list-item-text">
+                    <h2>{{vm.name}}</h2>
+                    <p>{{vm.status}}</p>
+                </div>
+                <md-button class="md-raised" ng-click="networksDialog($event, vm)">Networks</md-button>
+                <md-button class="md-raised" ng-click="storageDialog($event, vm)">Storage</md-button>
+                <md-button class="md-raised" ng-show="vm.status==='RUNNING'" ng-click="pause(vm)">Pause</md-button>
+                <md-button class="md-raised" ng-show="vm.status==='PAUSED'" ng-click="resume(vm)">Resume</md-button>
+                <md-button class="md-raised" ng-click="terminate(vm)">Terminate</md-button>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

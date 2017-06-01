@@ -1,0 +1,24 @@
+<md-dialog flex="90">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Networks</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <md-input-container>
+            <label>Name</label>
+            <input ng-model="name">
+        </md-input-container>
+
+        <md-dialog-content>
+            <md-list>
+                <md-list-item class="md-2-line" ng-repeat="network in networks">
+                    <p>{{network.name}}</p>
+                </md-list-item>
+            </md-list>
+        </md-dialog-content>
+
+    </form>
+</md-dialog>

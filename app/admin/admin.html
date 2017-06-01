@@ -1,0 +1,25 @@
+<div ng-controller="adminController">
+    <md-content layout-padding>
+        <h2>Networks</h2>
+        <md-input-container>
+            <label>Name</label>
+            <input ng-model="name">
+        </md-input-container>
+
+        <md-dialog-actions layout="row">
+            <md-button class="md-raised" ng-click="insert()">Insert</md-button>
+        </md-dialog-actions>
+
+        <md-list>
+            <md-list-item class="md-2-line" ng-repeat="network in networks">
+                <div class="md-list-item-text">
+                    <h3>{{network.name}}</h3>
+                </div>
+                <md-button class="md-raised" ng-click="delete(network)">Delete</md-button>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+
+    </md-content>
+
+</div>
